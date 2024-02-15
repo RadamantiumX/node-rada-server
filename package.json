@@ -1,0 +1,27 @@
+{
+  "name": "rada-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --watch app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "eslintConfig": {
+    "extends": "standard"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3",
+    "standard": "^17.1.0"
+  },
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.18.2",
+    "mysql2": "3.9.1",
+    "zod": "3.22.4"
+  }
+}
