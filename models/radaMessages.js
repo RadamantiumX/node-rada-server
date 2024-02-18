@@ -12,13 +12,13 @@ const connString = DEFAULT_CONFIG
 
 const connection = await mysql.createConnection(connString)
 export class RadaMessageModel {
-  static async getAllMessages () {
+  static async getAlles () {
     const messages = await connection.query('SELECT * FROM messages')
 
     return messages
   }
 
-  static async addMessage ({ input }) {
+  static async create ({ input }) {
     const { email, name, message } = input
 
     try {
@@ -26,5 +26,10 @@ export class RadaMessageModel {
     } catch (error) {
       throw new Error('Error to create message')
     }
+  }
+
+  static async delete ({ id }) {
+    const messageIndex = await connection.query('DELETE FROM messages WHERE id = ?', [id])
+    return true
   }
 }
